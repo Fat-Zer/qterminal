@@ -256,11 +256,10 @@ void MainWindow::setup_ActionsMenu_Actions()
 
     data.setValue(checkHasIndexedTab);
 
-    const QString textBase = tr("Tab");
     QMenu *menu_GoTo = new QMenu(tr("Go to"), menu_Actions);
     for (int i=1; i<=10; ++i) {
         QString num = QString::number(i);
-        QAction *action = new QAction(textBase + QLatin1Char(' ') + num, settingOwner);
+        QAction *action = new QAction(tr("Tab %1").arg(num), settingOwner);
         action->setProperty("tab", i);
         char name[16];
         snprintf(name, sizeof(name), "Tab %d", i);
